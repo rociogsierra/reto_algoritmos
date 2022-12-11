@@ -1,4 +1,5 @@
 
+#problema de los movimientos de caballo de ajedrez
 #según el documento propuesto:
 
 PENSAMIENTO_ALGORITMICO = {
@@ -37,6 +38,6 @@ def contar_secuencia(num_saltos):
 for salto in [1, 2, 3, 5, 8, 10, 15, 18, 21, 23, 32]:
     valor_posible = contar_secuencia(num_saltos = salto)
     print("{} movimientos, y {} valores posibles").format(salto, valor_posible)
-    
+
 
 

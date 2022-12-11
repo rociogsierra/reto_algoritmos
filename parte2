@@ -1,0 +1,12 @@
+
+#apuntes tomados en clase
+#problema del numero de reinas
+
+numero_de_reinas = 6
+contador = 0
+columna = [False]*numero_de_reinas
+
+diagonal_izq = [False]*(n*2)
+diagonal_der = [False]*(n*2)
+resultado = []
+
