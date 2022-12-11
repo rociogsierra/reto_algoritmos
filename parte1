@@ -16,6 +16,7 @@ PENSAMIENTO_ALGORITMICO = {
 }
 
 def pensamientos(posicion):
+    
     return PENSAMIENTO_ALGORITMICO
 
 def producir_secuencia(posicion_inicial, num_saltos, secuencia = None):
