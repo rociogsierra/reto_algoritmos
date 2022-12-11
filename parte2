@@ -6,7 +6,33 @@ numero_de_reinas = 6
 contador = 0
 columna = [False]*numero_de_reinas
 
-diagonal_izq = [False]*(n*2)
-diagonal_der = [False]*(n*2)
+diagonal_izq = [False]*(numero_de_reinas*2)
+diagonal_der = [False]*(numero_de_reinas*2)
 resultado = []
+
+#definimos la función
+
+def backtrack(y, numero_de_reinas, contador):
+    
+    if (y == numero_de_reinas):
+        return contador + 1
+    
+    for i in range(numero_de_reinas):
+        global columna
+        global diagonal_izq
+        global diagonal_der
+
+        if(columna[i] or diagonal_izq[i + y] or diagonal_der[i - y + numero_de_reinas - 1]):
+            continue
+        
+        columna[i] = diagonal_izq[i + y] = diagonal_der[i - y + numero_de_reinas - 1]
+        resultado.append((i, y))
+        
+        contador = backtrack(y + 1, numero_de_reinas, contador)
+
+        if contador != 0:
+            
+
+
+
 
