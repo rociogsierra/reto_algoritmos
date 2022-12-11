@@ -14,7 +14,7 @@ PENSAMIENTO_ALGORITMICO = {
     0: (4,6)
 }
 
-def pensamiento(posicion):
+def pensamientos(posicion):
     return PENSAMIENTO_ALGORITMICO
 
 def producir_secuencia(posicion_inicial, num_saltos, secuencia = None):
@@ -22,4 +22,21 @@ def producir_secuencia(posicion_inicial, num_saltos, secuencia = None):
         secuencia = [posicion_inicial]
     if num_saltos == 0:
         yield secuencia
-        return   
+        return 
+
+    for pensamiento in pensamientos(posicion_inicial):
+        yield from producir_secuencia(pensamiento, num_saltos -1, secuencia + [pensamiento])
+
+def contar_secuencia(num_saltos):
+    num_de_secuencias = 0
+    for primer_posible_numero in [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]:
+        for secuencia in producir_secuencia(primer_posible_numero, num_saltos):
+            num_de_secuencias += 1
+    return num_de_secuencias
+
+for salto in [1, 2, 3, 5, 8, 10, 15, 18, 21, 23, 32]:
+    valor_posible = contar_secuencia(num_saltos = salto)
+    print("{} movimientos, y {} valores posibles").format(salto, valor_posible)
+    
+
+
