@@ -21,6 +21,7 @@ def pensamientos(posicion):
 def producir_secuencia(posicion_inicial, num_saltos, secuencia = None):
     if secuencia is None:
         secuencia = [posicion_inicial]
+    
     if num_saltos == 0:
         yield secuencia
         return 
