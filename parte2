@@ -35,6 +35,7 @@ def backtrack(y, numero_de_reinas, contador):
 
 solucion_que_obtenemos = backtrack(0, numero_de_reinas, contador)
 solucion_final = [pos[1] for pos in sorted(resultado, key = lambda i: i[0])]
+
 print(solucion_final)
 
 
